@@ -4,6 +4,7 @@
 <head>
   <title>3A_3DJV</title>
   <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-grid.css">
   <meta charset="utf-8"/>
 </head>
 
