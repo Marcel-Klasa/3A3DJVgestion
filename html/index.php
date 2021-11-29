@@ -40,6 +40,7 @@
           }
           ?>
           <br>
+	    <h2> Ajouter un fichier </h2>
             <h3>Cours:</h3>
               <div class="form-group">
                 <select class="form-control form-control-sm" name="cours" form="fichier" style="max-width: 50%">
