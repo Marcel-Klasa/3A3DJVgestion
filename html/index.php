@@ -2,8 +2,8 @@
 <html>
 
 <head>
-  <title>3A_3DJV</title>
-  <link rel="stylesheet" href="css.css">
+  <title>3Adazd_3DJV</title>
+  <link rel="stylesheet" type="text/css" href="css/css.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-grid.css">
   <meta charset="utf-8"/>
 </head>
@@ -12,52 +12,65 @@
   <body>
     <div class="wrapper">
 
-
-      <h1>Site 3A 3DJV V0.4</h1>
+      <center>
+        <h1>Site 3A 3DJV V0.4</h1>
+      
       <header>
-      <p>Système de gestion des 3ème année 3DJV</p>
-      <p>(Ce site est pour aider la classe 3A3DJV et est constament en cours de développement. Tu veux l'améliorer? demande à Marcel)</p>
-      <p> /////// Si tu veux t'amuser à hacker/pirater/crash le système, je ne vais pas m'amuser à le réparer 10000000 fois ///////
-    </header>
 
-
-      <nav> 
-        <H2>Fichiers de cours</H2>
-        <?php //REQUETES FICHIERS DANS LE DIR
-        foreach(glob('cours/*') as $ffichier){
-          echo '<dt>' . substr($ffichier, 6) . '</dt>';
-          foreach(glob($ffichier.'/*') as $fname){
-            echo ' - ' . '<a href="' . $fname . '" download>' . substr($fname, 16) . ' </a> <br>';
+      <div class="row">
+        <div class="col border opaque" style="max-width:50%;margin-left:25%">
+          <p>Système de gestion des 3ème année 3DJV</p>
+          <p>(Ce site est pour aider la classe 3A3DJV et est constament en cours de développement. Tu veux l'améliorer? demande à Marcel)</p>
+          <p> /////// Si tu veux t'amuser à hacker/pirater/crash le système, je ne vais pas m'amuser à le réparer 10000000 fois ///////</p>
+        </div>
+      </div>
+      </header>
+      </center>
+      <br><br>
+      <div class="row"style=";margin-left:24%">
+        <div class="col-3 border opaque"> 
+          <center>
+          <H2>Fichiers de cours :</H2>
+	  <?php //REQUETES FICHIERS DANS LE DIR
+          foreach(glob('cours/*') as $ffichier){
+            echo '<dt>' . substr($ffichier, 6) . '</dt>';
+            foreach(glob($ffichier.'/*') as $fname){
+              echo ' - ' . '<a href="' . $fname . '" download>' . substr($fname, 16) . ' </a> <br>';
+            }
           }
-        }
-        ?>
-        <br>
-        <label>Cours:</label>
-        <select name="cours" form="fichier">
-          <option value="algo_avan">Algo Avancée</option>
-          <option value="game_desi">Game Design</option>
-          <option value="gest_proj">Gestion Projet</option>
-          <option value="init_cpp_">Initiation c++</option>
-          <option value="math_info">Math p/ L'info</option>
-          <option value="mode_3d__">Model 3D</option>
-          <option value="prog_jv__">Prog JV</option>
-          <option value="proj_annu">Projet Annuel</option>
-          <option value="roet_ia__">RO & IA</option>
-          <option value="scsh_pyth">Scrip Shell & Python</option>
-        </select>
-        <form action="AjoutFichier.php" method="post" id="fichier" enctype="multipart/form-data">
-            <label>Ajouter un fichier:</label>
-            <input type="file" name="the_file"><br/>
-            <input type="submit" name="upload" value="Send">
-        </form>
-      </nav>
+          ?>
+          <br>
+            <h3>Cours:</h3>
+              <div class="form-group">
+                <select class="form-control form-control-sm" name="cours" form="fichier" style="max-width: 50%">
+                  <option value="algo_avan">Algo Avancée</option>
+                  <option value="game_desi">Game Design</option>
+                  <option value="gest_proj">Gestion Projet</option>
+                  <option value="init_cpp_">Initiation c++</option>
+                  <option value="math_info">Math p/ L'info</option>
+                  <option value="mode_3d__">Model 3D</option>
+                  <option value="prog_jv__">Prog JV</option>
+                  <option value="proj_annu">Projet Annuel</option>
+                  <option value="roet_ia__">RO & IA</option>
+                  <option value="scsh_pyth">Scrip Shell & Python</option>
+                </select>
+              </div>
+          
+          <form action="AjoutFichier.php" method="post" id="fichier" enctype="multipart/form-data">
+              <h3>Ajouter un fichier:</h3>
+              <input class="form-control" style="width:50%"type="file" name="the_file"><br/>
 
+              <input class="btn btn-primary" style="width:20%" type="submit" name="upload" value="Send">
+          </form>
+        </center>
+        </div>
+      
+        <div class="col-5 border opaque">
+          <center>
+          <H2>Evenements</H2>
 
-      <section>
-        <H2>Evenements</H2>
-
-        <!-- PARTIE PHP REQUETE BDD EVENTS -->
-        <?php
+          <!-- PARTIE PHP REQUETE BDD EVENTS -->
+          <?php
           $con = mysqli_connect("localhost","root","root","3A_3DJV");
 
           $Freq = "SELECT
@@ -84,42 +97,40 @@
           mysqli_close($con);
 
         ?>
-        <!-- FIN PARTIE PHP REQUETE BDD EVENTS -->
+          <!-- FIN PARTIE PHP REQUETE BDD EVENTS -->
 
-
-
-        <!-- FORMULAIRE POST POUR AJOUTER UN EVENEMENT -->
-        <p> Ajouter un evenement: </p>
-        <form method='POST' action='AjoutEvent.php'>
-          <tr>
-            <td>
-              <font>Date </font>
-            </td>
-            <td><input type ='date' name='date_'/></td>
-          </tr>
-          <tr>
-            <td>
-              <font>Titre </font>
-            </td>
-            <td><input type ='text' name='titre_'/></td>
-          </tr>
-          <tr>
-          <tr>
-            <td>
-              <font>Description </font>
-            </td>
-            <td><input type ='text' name='description_'/></td>
-          </tr>
-          <tr>
-            <td colspan='2'>
-              <input type="submit" name='valid' value="Ajouter"/>
-            </td>
-          </tr>
-        </form>
-        <!-- FIN FORMULAIRE -->
-      </section>
-
-
+          <!-- FORMULAIRE POST POUR AJOUTER UN EVENEMENT -->
+          <h3> Ajouter un evenement: </h3>
+          <form method='POST' action='AjoutEvent.php'>
+            <tr>
+              <td>
+                <label>Date </label>
+              </td>
+              <td><input class="form-control" style="width:50%" type='date' placeholder="Date..." name='date_'/></td>
+            </tr><br><br>
+            <tr>
+              <td>
+                <label>Titre </label>
+              </td>
+              <td><input  class="form-control" style="min-width:50%" placeholder="Titre..." type='text' name='titre_'/></td>
+            </tr><br><br>
+            
+            <tr>
+              <td>
+                <label>Description </label>
+              </td>
+              <td><input class="form-control" style="min-width:50%" placeholder="Description..." type='text' name='description_'/></td>
+            </tr>
+            <tr><br><br>
+              <td colspan='2'>
+                <input type="submit" class="btn btn-primary" style="width:20%" name='valid' value="Ajouter"/>
+              </td>
+            </tr>
+          </form>
+        </center>
+          <!-- FIN FORMULAIRE -->
+        </div>
+      </div>
     </div>
   </body>
 </html>
