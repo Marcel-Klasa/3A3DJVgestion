@@ -1,0 +1,43 @@
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+header {
+    width: 100%;
+    background-color: #888;
+}
+nav, section {
+  float: left;
+}
+nav {
+  width: 19.34%;
+  margin-right: 10px;
+  background-color: #AAA;
+}
+section {
+  width: 80%;
+  background-color: #AAA;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #555;
+  color: #000000;
+  font-family: Courier New;
+  margin: 0;
+}
+header,
+nav,
+section {
+  border: 1px solid rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+header {
+  padding: 10px 0;
+}
