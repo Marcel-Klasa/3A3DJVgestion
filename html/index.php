@@ -113,14 +113,14 @@
               <td>
                 <label>Titre </label>
               </td>
-              <td><input  class="form-control" style="min-width:50%" placeholder="Titre..." type='text' name='titre_'/></td>
+              <td><input  class="form-control" style="width:50%" placeholder="Titre..." type='text' name='titre_'/></td>
             </tr><br><br>
             
             <tr>
               <td>
                 <label>Description </label>
               </td>
-              <td><input class="form-control" style="min-width:50%" placeholder="Description..." type='text' name='description_'/></td>
+              <td><input class="form-control" style="width:50%" placeholder="Description..." type='text' name='description_'/></td>
             </tr>
             <tr><br><br>
               <td colspan='2'>
