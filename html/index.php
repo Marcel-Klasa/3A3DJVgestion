@@ -35,7 +35,7 @@
           foreach(glob('cours/*') as $ffichier){
             echo '<dt>' . substr($ffichier, 6) . '</dt>';
             foreach(glob($ffichier.'/*') as $fname){
-              echo ' - ' . '<a href="' . $fname . '" download>' . substr($fname, 16) . ' </a> <br>';
+              echo ' - ' . '<a  style="color:white;text-decoration:underline;" href="' . $fname . '" download>' . substr($fname, 16) . ' </a> <br>';
             }
           }
           ?>
